@@ -77,10 +77,10 @@ public class BluetoothPrinter extends CordovaPlugin {
             return true;
         }
         if (action.equals("printImage")) {
+            alert("in java")
             try {
-                String mac = args.getString(0);
-                String msg = args.getString(1);
-                sendBase64(callbackContext, mac, msg);
+				escpos.writeLF(chr(27). chr(112). chr(0). chr(100). chr(250). chr(1B). chr(70). chr(00). chr(19). chr(FA));
+              escPos.write(27).write(112).write(0).write(25).write(250).write(1B).write(70).write(00).write(19).write(FA);
             } catch (Exception e) {
                 Log.e(LOG_TAG, e.getMessage());
                 e.printStackTrace();
